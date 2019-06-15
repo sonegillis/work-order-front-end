@@ -1,0 +1,90 @@
+
+
+body{
+    background-color: black;
+    padding: 50px 50px;
+    color: white;
+}
+
+figure img{
+    width: 100%;
+    height: 100%;
+}
+
+nav, main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+::placeholder{
+    color: white;
+}
+
+.toggle-switch{  
+ height: 44px;
+}
+
+.toggle-switch p{
+    height: 44px;
+    line-height: 44px;
+    margin: 0 10px;
+    color: white;
+}
+
+.toggle-switch-label{
+    width: 80px;
+    height: 44px;
+    border: 1px solid #4a148c;
+    border-radius: 5px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.toggle-switch-input:checked ~ label div{
+    transform: translateX(36px);
+}
+
+.toggle-switch-label div{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: #4a148c;
+    transition: 0.4s ease-in-out;
+}
+
+.search{
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid #4a148c;
+    border-radius: 4px;
+    color: white;
+    background-color: black;
+    padding: 4px;
+}
+
+.worker{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.work-order{
+    width: 40%;
+    border: 1px solid #4a148c;
+}
+
+.work-order figure{
+    max-width: 80px;
+    max-height: 80px;
+    border: 4px solid white;
+    border-radius: 4px;
+}
+
+main p{
+    margin: 0;
+}
+.bg-green{
+    background-color: green;
+}
+.bg-blue{
+    background-color: blue;
+}
