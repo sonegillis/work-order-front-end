@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let get_work_orders_url = "​http://www.hatchways.io/api/assessment/work_orders";
+    let get_work_orders_url = "​https://www.hatchways.io/api/assessment/work_orders";
     getWorkOrders(get_work_orders_url);
 });
 
