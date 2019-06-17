@@ -4,14 +4,11 @@ const workerDetailUrl = "https://www.hatchways.io/api/assessment/workers/";
 var workOrders;
 var workOrderFilter = [];
 var workerDetail = {};
-var fetchedWorkers = [];    // here we store the workers whose detail have been fetched so that we don't query for them again
+var fetchedWorkers = [];  
 
 $(document).ajaxStop(function() {
-    // $('.loading').hide(100);
     $(".blur").animate({left: '-5000px'}, 4000);
-    console.log(workOrders);
     insertionSortByDeadline();
-    console.log(workOrders);
     displayWorkOrders(workOrders);
 });
 
@@ -24,15 +21,13 @@ $(document).ready(function(){
         }
     });
     $("#toggle-switch-label").on('click', () => {
-        alert("clicked");
-        alert($("#search").val().length);
         workOrders = workOrders.reverse();
+        workOrderFilter = workOrderFilter.reverse();
         if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
         else displayWorkOrders(workOrders);
         alert("displayed");
     });
     
-    console.log(workerDetail);
 });
 
 function displayWorkOrders(workOrders){
@@ -138,13 +133,13 @@ function filterByWorker(){
             filterList.push(parseInt(worker))
         }
     }
-    console.log(filterList);
+
     workOrders.forEach((data, i) => {
         if (filterList.includes(data.workerId)) {
             workOrderFilter.push(data);
         }
     });
-    console.log(workOrderFilter);
+
     displayWorkOrders(workOrderFilter);
 }
 
