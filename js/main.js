@@ -2,6 +2,7 @@
 const workOrdersUrl = "https://www.hatchways.io/api/assessment/work_orders";
 const workerDetailUrl = "https://www.hatchways.io/api/assessment/workers/";
 var workOrders;
+var workOrderFilter = [];
 var workerDetail = {};
 var fetchedWorkers = [];    // here we store the workers whose detail have been fetched so that we don't query for them again
 
@@ -24,6 +25,8 @@ $(document).ready(function(){
     });
     $("#toggle-switch").on('click', () => {
         workOrders = workOrders.reverse();
+        if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
+        else displayWorkOrders(workOrder);
     });
     
     console.log(workerDetail);
@@ -124,7 +127,7 @@ function getDivBlock(work_order, description, deadline, worker_id){
 
 function filterByWorker(){
     let filterList = [];
-    let workOrderFilter = [];
+    workOrderFilter = [];
     let value = $("#search").val();
 
     for (worker in workerDetail) {
