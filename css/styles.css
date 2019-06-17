@@ -109,20 +109,6 @@ main p{
 }
 @keyframes load{
     from {transform: rotate(0deg);}
-    to {transform: rotate(360deg); border: 4px dotted rgba(255, 255, 255, 0.7);}
+    to {transform: rotate(360deg); border: 4px dotted #fff; border: 4px dotted rgba(255, 255, 255, 0.7);}
 }
 
-/* @media only screen and (min-width: 768px) {
-    nav{
-        width: 90%;
-        margin: 0 auto;
-    }
-
-}
-
-@media only screen and (min-width: 1024px) {
-    nav{
-        width: 98%;
-        margin: 0 auto;
-    }
-} */

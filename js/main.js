@@ -23,10 +23,12 @@ $(document).ready(function(){
             fetchedWorkers.push(data.workerId);
         }
     });
-    $("#toggle-switch").on('click', () => {
+    $("#toggle-switch-label").on('click', () => {
+        alert("clicked")
         workOrders = workOrders.reverse();
         if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
         else displayWorkOrders(workOrder);
+        alert("displayed");
     });
     
     console.log(workerDetail);
