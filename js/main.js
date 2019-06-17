@@ -47,14 +47,14 @@ function displayWorkOrders(workOrders){
 
 function insertionSortByDeadline(){
     let shiftArray = (from, to) => {
-        for (let i = to; i <= from; i--) {
+        for (let i = to; i >= from; i--) {
             workOrders[i] = workOrders[i-1];
         }
     }
     for (let i = 1; i < workOrders.length; i++) {
         for (let j = 0; j < i; j++) {
             if (workOrders[i].deadline < workOrders[j].deadline) {
-                shiftArray(i, j-1);
+                shiftArray(j-1, i);
                 break;
             }
         }
