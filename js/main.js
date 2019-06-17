@@ -53,6 +53,7 @@ function insertionSortByDeadline(){
     }
     for (let i = 1; i < workOrders.length; i++) {
         for (let j = 0; j < i; j++) {
+            console.log(j);
             if (workOrders[i].deadline < workOrders[j].deadline) {
                 shiftArray(j+1, i);
                 break;
