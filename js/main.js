@@ -45,23 +45,6 @@ function displayWorkOrders(workOrders){
     $(".work-order").show('slow');
 }
 
-function sortOnKeys(dict) {
-
-    var sorted = [];
-    for(var key in dict) {
-        sorted[sorted.length] = key;
-    }
-    sorted.sort();
-
-    var tempDict = {};
-    for(var i = 0; i < sorted.length; i++) {
-        tempDict[sorted[i]] = dict[sorted[i]];
-    }
-
-    return tempDict;
-}
-
-// 1 2 3 4 5 6 7
 
 function SortWorkOrdersByDeadline(){
     newArray = []
