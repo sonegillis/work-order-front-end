@@ -24,7 +24,8 @@ $(document).ready(function(){
         }
     });
     $("#toggle-switch-label").on('click', () => {
-        alert("clicked")
+        alert("clicked");
+        alert($("#search").val().length);
         workOrders = workOrders.reverse();
         if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
         else displayWorkOrders(workOrder);
