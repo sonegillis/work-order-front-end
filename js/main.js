@@ -9,7 +9,7 @@ $(document).ajaxStop(function() {
     // $('.loading').hide(100);
     $(".blur").animate({left: '-5000px'}, 4000);
     console.log(workOrders);
-    SortWorkOrdersByDeadline();
+    insertionSortByDeadline();
     console.log(workOrders);
     displayWorkOrders(workOrders);
 });
@@ -45,6 +45,21 @@ function displayWorkOrders(workOrders){
     $(".work-order").show('slow');
 }
 
+function insertionSortByDeadline(){
+    let shiftArray = (from, to) => {
+        for (let i = to; i <= from; i--) {
+            workOrders[i] = workOrders[i-1];
+        }
+    }
+    for (let i = 1; i < workOrders.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (workOrders[i].deadline < workOrders[j].deadline) {
+                shiftArray(i, j-1);
+                break;
+            }
+        }
+    }
+}
 
 function SortWorkOrdersByDeadline(){
     newArray = []
@@ -134,7 +149,7 @@ function getDivBlock(work_order, description, deadline, worker_id){
         <div class="work-order col-sm-6 col-lg-4 text-center mb-4 style="display:none">
             <p class="mb-2 font-weight-bold">${work_order}</p>
             <p class="Description">${description}</p>
-            <div class="worker mt-2">
+            <div class="worker mt-2 d-flex flex-row justify-content-around mb-2">
                 <figure class="w-100 w-sm-25 ">
                     <img src=${worker['image']} alt=${worker['name']}>
                 </figure>
