@@ -31,20 +31,22 @@ $(document).ready(function(){
 
 function displayWorkOrders(workOrders){
     $("#main").html("");
-    var div_block = '<div class="container">'
-    var container_start = '<div class="row">'
-    var container_end = '</div>'
-    div_block += container_start;
+    // var div_block = '<div class="container">'
+    // var container_start = '<div class="row">'
+    // var container_end = '</div>'
+    var div_block = '<div class="d-flex container-fluid justify-content-between flex-wrap flex-row text-center">';
+    // div_block += container_start;
     for(let i = 0; i < workOrders.length; i++) {
         workOrder = workOrders[i]
         div_block += getDivBlock(workOrder.name, workOrder.description, workOrder.deadline, workOrder.workerId)
-        if ((i+1)%3==0){
-            div_block += container_end;
-            div_block += container_start;
-        }
+        // if ((i+1)%3==0){
+        //     div_block += container_end;
+        //     div_block += container_start;
+        // }
     }
-    div_block += container_end;
+    // div_block += container_end;
     div_block += '</div>';
+    // alert(div_block);
     $("#main").html(div_block);
     $(".work-order").show('slow');
 }
@@ -99,13 +101,14 @@ function getWorkerDetail(workerId){
 }
 
 function getDivBlock(work_order, description, deadline, worker_id){
+    // <div class="work-order col-lg-4 col-12 text-center mb-2">/
     let worker = workerDetail[worker_id]['worker']
     var block_div = `
-        <div class="work-order col-sm-6 col-lg-4 text-center mb-4 style="display:none">
+        <div class="work-order mb-2 p-2">
             <p class="mb-2 font-weight-bold">${work_order}</p>
             <p class="Description">${description}</p>
             <div class="worker mt-2 d-flex flex-row justify-content-around mb-2">
-                <figure class="w-100 w-sm-25 ">
+                <figure class="w-100 w-sm-25">
                     <img src=${worker['image']} alt=${worker['name']}>
                 </figure>
                 <div class="worker-detail w-100 w-sm-75 font-italic">
