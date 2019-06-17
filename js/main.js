@@ -22,6 +22,10 @@ $(document).ready(function(){
             fetchedWorkers.push(data.workerId);
         }
     });
+    $("#toggle-switch").on('click', () => {
+        workOrders = workOrders.reverse();
+    });
+    
     console.log(workerDetail);
 });
 
@@ -51,10 +55,9 @@ function insertionSortByDeadline(){
             workOrders[i] = workOrders[i-1];
         }
     }
-    console.log('starting insertion sort');
+    
     for (let i = 1; i < workOrders.length; i++) {
         for (let j = 0; j < i; j++) {
-            console.log(j);
             if (workOrders[i].deadline < workOrders[j].deadline) {
                 let temp = workOrders[i];
                 shiftArray(j+1, i);
@@ -63,59 +66,6 @@ function insertionSortByDeadline(){
             }
         }
     }
-    console.log('Completing insertion sort');
-}
-
-function SortWorkOrdersByDeadline(){
-    newArray = []
-    let flag = false;
-    let condition;
-
-    if (workOrders[0].deadline < workOrders[1].deadline) {
-        newArray.push(workOrders[0]);
-        newArray.push(workOrders[1]);
-    }
-    else{
-        newArray.push(workOrders[1]);
-        newArray.push(workOrders[0]);
-    }
-    console.log(newArray);
-    for(let i = 2; i < workOrders.length; i++){
-        for (let j = 0; j < newArray.length; j++) {
-            if (workOrders[i].deadline < newArray[0].deadline) {
-                newArray.unshift(workOrders[i]);
-                flag = true;
-                console.log(newArray);
-                break;
-            }
-            if (workOrders[i].deadline > newArray[newArray.length-1].deadline) {
-                newArray.push(workOrders[i]);
-                console.log(newArray);
-                flag = true;
-                break;
-            }
-            
-            if (j < newArray.length - 1) {
-                condition = workOrders[i].deadline >= newArray[j].deadline && workOrders[i].deadline <= newArray[j+1].deadline;
-
-                if (condition) {
-
-                    newArray.splice(j, 0, workOrders[i]);
-                    console.log(newArray);
-                    flag = true;
-                    break;
-                }
-
-            }    
- 
-        }
-        if (!flag) {
-            newArray.splice(newArray.length-1, 0, workOrder[i]);
-            console.log(newArray);
-        }
-        flag = false;
-    }
-    workOrders = newArray;
 }
 
 function getWorkOrders(){
