@@ -14,6 +14,15 @@ figure img{
 nav{
     width: 99%;
     margin: 0 auto;
+    background-color: #000;
+    position: fixed;
+    padding-top: 50px;
+    top: 0;
+    z-index: 7;
+}
+
+main{
+    margin-top: 100px;
 }
 
 ::placeholder{
@@ -104,7 +113,7 @@ main p{
     height: 100vh;
     left: 0;
     top: 0;
-    z-index: 4;
+    z-index: 14;
     background-color: black;
 }
 @keyframes load{

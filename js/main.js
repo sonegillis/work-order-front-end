@@ -25,7 +25,6 @@ $(document).ready(function(){
         workOrderFilter = workOrderFilter.reverse();
         if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
         else displayWorkOrders(workOrders);
-        alert("displayed");
     });
     
 });
