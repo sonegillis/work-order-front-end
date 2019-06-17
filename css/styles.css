@@ -2,8 +2,8 @@
 
 body{
     background-color: black;
-    padding: 50px 50px;
     color: white;
+    padding: 20px;
 }
 
 figure img{
@@ -11,8 +11,8 @@ figure img{
     height: 100%;
 }
 
-nav, main{
-    width: 80%;
+nav{
+    width: 99%;
     margin: 0 auto;
 }
 
@@ -53,7 +53,6 @@ nav, main{
 }
 
 .search{
-    width: 50%;
     border: 0;
     border-bottom: 2px solid #4a148c;
     border-radius: 4px;
@@ -62,14 +61,13 @@ nav, main{
     padding: 4px;
 }
 
-.worker{
-    width: 80%;
-    margin: 0 auto;
-}
 
 .work-order{
-    width: 40%;
-    border: 1px solid #4a148c;
+    background: linear-gradient(
+        to bottom right,#4a148c, #4a148c 20%, #12005e
+    );
+    
+    color: white;
 }
 
 .work-order figure{
@@ -77,14 +75,54 @@ nav, main{
     max-height: 80px;
     border: 4px solid white;
     border-radius: 4px;
+    margin: 0 auto;
 }
 
 main p{
     margin: 0;
 }
+
+.loading{
+    border: 10px dotted #12005e;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    transform: rotate(360deg);
+    margin: 20% auto;
+    animation: load 2s infinite alternate ease-in-out;
+}
+
 .bg-green{
     background-color: green;
 }
 .bg-blue{
     background-color: blue;
 }
+.blur{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    background-color: black;
+}
+@keyframes load{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg); border: 4px dotted rgba(255, 255, 255, 0.7);}
+}
+
+/* @media only screen and (min-width: 768px) {
+    nav{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    nav{
+        width: 98%;
+        margin: 0 auto;
+    }
+} */

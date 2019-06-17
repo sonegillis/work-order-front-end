@@ -3,79 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <title>Work Order</title>
     </head>
 
     <body>
         <header class="mb-4">
-            <nav class="clearfix">
-                <input class="search float-left" type="text" placeholder="Filter by Worker name">
-                <div class="toggle-switch clearfix float-right">
-                    <input id="toggle-switch" class="toggle-switch-input d-none" type="checkbox">
-                    <p class="float-left">Earliest First</p>
-                    <label class="toggle-switch-label float-left" for="toggle-switch"> <div></div></label>
-                    <p class="float-left">Latest First</p>
+            <nav>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-12 col-md-7 w-100 mb-3"><input id="search" class="search w-100" autocomplete="off" onkeyup="filterByWorker()"type="text" placeholder="Filter by Worker name"></div>
+                        <div class="col-12 col-md-5 text-center w-md-25 toggle-switch clearfix">
+                            <input id="toggle-switch" class="toggle-switch-input d-none" type="checkbox">
+                            <p class="float-left">Earliest First</p>
+                            <label class="toggle-switch-label float-left" for="toggle-switch"> <div></div></label>
+                            <p class="float-left">Latest First</p>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>
-        <main class="d-flex justify-content-between flex-wrap">
-            <div class="work-order text-center p-3 mb-4">
-                <p>Work order <span class="work-order-id"></span> </p>
-                <p>Work Name</p>
-                <p class="Description">This is a description</p>
-                <div class="worker d-flex justify-content-around mt-2">
-                    <figure class="w-25">
-                        <img src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg" alt="name">
-                    </figure>
-                    <div class="worker-detail w-75 font-italic">
-                        <p class="name"> <small>Ekeh James Mekolle Sone</small> </p>
-                        <p class="email"> <small>sone_gillis@yahoo.com</small> </p>
-                        <p class="company"> <small>CCAS</small> </p>
-                    </div>
-                </div>
-            </div>
-            <div class="work-order text-center p-3 mb-4">
-                <p>Work order <span class="work-order-id"></span> </p>
-                <p>Work Name</p>
-                <p class="Description">This is a description</p>
-                <div class="worker d-flex justify-content-around mt-2">
-                    <figure class="w-25">
-                        <img src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg" alt="name">
-                    </figure>
-                    <div class="worker-detail w-75 font-italic">
-                        <p class="name"> <small>Ekeh James Mekolle Sone</small> </p>
-                        <p class="email"> <small>sone_gillis@yahoo.com</small> </p>
-                        <p class="company"> <small>CCAS</small> </p>
-                    </div>
-                </div>
-            </div>
-            <div class="work-order text-center p-3 mb-4">
-                <p>Work order <span class="work-order-id"></span> </p>
-                <p>Work Name</p>
-                <p class="Description">This is a description</p>
-                <div class="worker d-flex justify-content-around mt-2">
-                    <figure class="w-25">
-                        <img src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg" alt="name">
-                    </figure>
-                    <div class="worker-detail w-75 font-italic">
-                        <p class="name"> <small>Ekeh James Mekolle Sone</small> </p>
-                        <p class="email"> <small>sone_gillis@yahoo.com</small> </p>
-                        <p class="company"> <small>CCAS</small> </p>
-                    </div>
-                </div>
-                <div class="dealine mt-2">
-                    <p class="text-right">June 5, 2015</p>
-                </div>
-            </div>
+        <div class="blur">
+            <div class="loading"></div>
+        </div>
+        <main id="main">
+            
         </main>
-        <footer>
-
-        </footer>
-
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="js/main.js"></script>
     </body>
