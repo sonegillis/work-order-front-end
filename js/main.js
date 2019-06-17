@@ -51,6 +51,7 @@ function insertionSortByDeadline(){
             workOrders[i] = workOrders[i-1];
         }
     }
+    console.log('starting insertion sort');
     for (let i = 1; i < workOrders.length; i++) {
         for (let j = 0; j < i; j++) {
             console.log(j);
@@ -60,6 +61,7 @@ function insertionSortByDeadline(){
             }
         }
     }
+    console.log('Completing insertion sort');
 }
 
 function SortWorkOrdersByDeadline(){
