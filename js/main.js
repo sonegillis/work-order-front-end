@@ -28,7 +28,7 @@ $(document).ready(function(){
         alert($("#search").val().length);
         workOrders = workOrders.reverse();
         if ($("#search").val() != "") displayWorkOrders(workOrderFilter);
-        else displayWorkOrders(workOrder);
+        else displayWorkOrders(workOrders);
         alert("displayed");
     });
     
