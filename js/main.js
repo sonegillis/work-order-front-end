@@ -134,7 +134,7 @@ function getDivBlock(work_order, description, deadline, worker_id){
         <div class="work-order col-sm-6 col-lg-4 text-center mb-4 style="display:none">
             <p class="mb-2 font-weight-bold">${work_order}</p>
             <p class="Description">${description}</p>
-            <div class="worker d-flex flex-column flex-sm-row justify-content-around mt-2">
+            <div class="worker mt-2">
                 <figure class="w-100 w-sm-25 ">
                     <img src=${worker['image']} alt=${worker['name']}>
                 </figure>
